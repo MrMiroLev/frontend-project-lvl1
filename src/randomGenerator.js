@@ -5,22 +5,9 @@ export const getRandomInt = () => {
   return num;
 };
 
-export const getRandomCalc = () => {
-  const num1 = getRandomInt();
-  const num2 = getRandomInt();
-
+export const getRandomOperator = () => {
   const operators = ['+', '-', '*'];
   const opIndex = Math.floor(Math.random() * operators.length);
   const selectedOperator = operators[opIndex];
-  const expression = `${num1} ${selectedOperator} ${num2}`;
-
-  let res;
-  // Result of 2 operands - num1 & num2
-  switch (opIndex) {
-    case 0: res = num1 + num2; break;
-    case 1: res = num1 - num2; break;
-    case 2: res = num1 * num2; break;
-    default: break;
-  }
-  return [expression, res.toString()];
+  return selectedOperator;
 };
