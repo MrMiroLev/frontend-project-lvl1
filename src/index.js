@@ -22,7 +22,7 @@ const playGame = (gameQuestion, getQuestionCorrectAnswer) => {
     }
   } while (correctAnswers < 3);
   // If answered correctly thrice.
-  return console.log(`Congratulations ${userName}!`);
+  return console.log(`Congratulations, ${userName}!`);
 };
 
 export default playGame;
