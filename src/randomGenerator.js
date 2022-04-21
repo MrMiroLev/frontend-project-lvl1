@@ -1,7 +1,6 @@
 // Returns a number from 0 to < maxNum
-export const getRandomInt = () => {
-  const maxNum = 100;
-  const num = Math.floor(Math.random() * maxNum);
+export const getRandomInt = (minNum, maxNum) => {
+  const num = minNum + Math.floor(Math.random() * (maxNum - minNum + 1));
   return num;
 };
 
