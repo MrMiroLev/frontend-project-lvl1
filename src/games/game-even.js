@@ -13,8 +13,9 @@ const isNumEven = (num) => {
 // Returns random number as a question
 // and answer 'yes' / 'no' for even / odd number respectively
 export const getQuestionAnswer = () => {
+  const [minNum, maxNum] = [1, 100];
   // Number is a question
-  const question = getRandomInt();
+  const question = getRandomInt(minNum, maxNum);
   const isEven = isNumEven(question);
   const answer = isEven ? 'yes' : 'no';
   return [question, answer];

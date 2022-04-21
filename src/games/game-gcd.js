@@ -12,8 +12,10 @@ const gcd = (a, b) => {
 
 // Returns 2 random numbers as a question and answer for gcd
 export const getQuestionAnswer = () => {
-  const num1 = getRandomInt();
-  const num2 = getRandomInt();
+  const [minNum, maxNum] = [1, 100];
+
+  const num1 = getRandomInt(minNum, maxNum);
+  const num2 = getRandomInt(minNum, maxNum);
   const answer = gcd(num1, num2);
   const question = `${num1} ${num2}`;
   return [question, answer];
