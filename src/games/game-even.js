@@ -4,20 +4,16 @@ import { getRandomInt } from '../randomGenerator.js';
 const gameQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 // Checks whether integer is even or not
-const isNumEven = (num) => {
-  const isOdd = Boolean(num % 2);
-  const isEven = !isOdd;
-  return isEven;
-};
+// Note: -1 = true
+const isEven = (num) => Boolean((num % 2) - 1);
 
-// Returns random number as a question
-// and answer 'yes' / 'no' for even / odd number respectively
+// Question: random integer
+// Answer: 'yes' / 'no' for even / odd number respectively
 export const getQuestionAnswer = () => {
   const [minNum, maxNum] = [1, 100];
-  // Number is a question
+  // Question is an integer
   const question = getRandomInt(minNum, maxNum);
-  const isEven = isNumEven(question);
-  const answer = isEven ? 'yes' : 'no';
+  const answer = isEven(question) ? 'yes' : 'no';
   return [question, answer];
 };
 
