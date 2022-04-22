@@ -7,8 +7,8 @@ const playGame = (gameQuestion, getQuestionCorrectAnswer) => {
 
   console.log(gameQuestion);
 
-  let correctAnswers = 0;
-  do {
+  const totalRounds = 3;
+  for (let round = 1; round <= totalRounds; round += 1) {
     const [question, correctAnswer] = getQuestionCorrectAnswer();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
@@ -16,11 +16,10 @@ const playGame = (gameQuestion, getQuestionCorrectAnswer) => {
     const isAnswerCorrect = (userAnswer === correctAnswer);
     if (isAnswerCorrect) {
       console.log('Correct!');
-      correctAnswers += 1;
     } else {
       return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${userName}!`);
     }
-  } while (correctAnswers < 3);
+  }
   // If answered correctly thrice.
   return console.log(`Congratulations, ${userName}!`);
 };
