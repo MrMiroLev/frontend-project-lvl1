@@ -4,9 +4,4 @@ export const getRandomInt = (minNum, maxNum) => {
   return num;
 };
 
-export const getRandomOperator = () => {
-  const operators = ['+', '-', '*'];
-  const opIndex = Math.floor(Math.random() * operators.length);
-  const selectedOperator = operators[opIndex];
-  return selectedOperator;
-};
+export default getRandomInt;

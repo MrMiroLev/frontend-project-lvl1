@@ -1,5 +1,5 @@
 import playGame from '../index.js';
-import { getRandomInt, getRandomOperator } from '../randomGenerator.js';
+import { getRandomInt } from '../randomGenerator.js';
 
 const gameQuestion = 'What is the result of the expression?';
 
@@ -9,12 +9,16 @@ export const getQuestionAnswer = () => {
   const num1 = getRandomInt(minNum, maxNum);
   const num2 = getRandomInt(minNum, maxNum);
 
-  const operator = getRandomOperator();
-  const question = `${num1} ${operator} ${num2}`;
+  const operators = ['+', '-', '*'];
+  const [minIndex, maxIndex] = [0, operators.length - 1];
+  const opIndex = getRandomInt(minIndex, maxIndex);
+  const selectedOperator = operators[opIndex];
+
+  const question = `${num1} ${selectedOperator} ${num2}`;
 
   let answer;
   // Result of 2 operands - num1 & num2
-  switch (operator) {
+  switch (selectedOperator) {
     case '+': answer = num1 + num2; break;
     case '-': answer = num1 - num2; break;
     case '*': answer = num1 * num2; break;
