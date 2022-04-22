@@ -7,10 +7,22 @@ const gameTask = 'What number is missing in the progression?';
 // a = the first term / initial value
 // n = n-th term
 // d = common difference between terms
+// l = AP length (amount of terms in an AP)
 // n-th term of an AP (formula): a+(n-1)d
 const arithmeticProgressionCalc = (a, n, d) => {
   const result = a + (n - 1) * d;
   return result;
+};
+
+const getProgressions = (a, l, d) => {
+  const progressionColl = [];
+  const progressionCollHiddenNum = [];
+  for (let term = 1; term <= l; term += 1) {
+    const num = arithmeticProgressionCalc(a, term, d);
+    progressionColl.push(num);
+    progressionCollHiddenNum.push(num);
+  }
+  return [progressionColl, progressionCollHiddenNum];
 };
 
 export const getQuestionAnswer = () => {
@@ -31,14 +43,8 @@ export const getQuestionAnswer = () => {
   const [minIndex, maxIndex] = [0, progressionLength - 1];
   const indexWithHiddenNum = getRandomInt(minIndex, maxIndex);
 
-  // Generate AP
-  const progressionColl = [];
-  const progressionCollHiddenNum = [];
-  for (let term = 1; term <= progressionLength; term += 1) {
-    const num = arithmeticProgressionCalc(initialNum, term, commonDiff);
-    progressionColl.push(num);
-    progressionCollHiddenNum.push(num);
-  }
+  // Get AP with one number of 'indexWithHiddenNum' index to be hidden
+  const [, progressionCollHiddenNum] = getProgressions(initialNum, progressionLength, commonDiff);
 
   // Answer = number to be hidden
   const answer = progressionCollHiddenNum[indexWithHiddenNum].toString();
