@@ -1,7 +1,7 @@
 import playGame from '../index.js';
 import { getRandomInt } from '../randomGenerator.js';
 
-const gameQuestion = 'What is the result of the expression?';
+const gameTask = 'What is the result of the expression?';
 
 // Returns question (operand operator operand - all random) and answer for calculation
 export const getQuestionAnswer = () => {
@@ -27,6 +27,6 @@ export const getQuestionAnswer = () => {
   return [question, answer.toString()];
 };
 
-const gameCalc = () => playGame(gameQuestion, getQuestionAnswer);
+const gameCalc = () => playGame(gameTask, getQuestionAnswer);
 
 export default gameCalc;

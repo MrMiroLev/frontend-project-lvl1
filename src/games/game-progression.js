@@ -1,7 +1,7 @@
 import playGame from '../index.js';
 import { getRandomInt } from '../randomGenerator.js';
 
-const gameQuestion = 'What number is missing in the progression?';
+const gameTask = 'What number is missing in the progression?';
 
 // Arithmetic Progresssion (AP) definitions:
 // a = the first term / initial value
@@ -50,6 +50,6 @@ export const getQuestionAnswer = () => {
   return [question, answer];
 };
 
-const gameProgression = () => playGame(gameQuestion, getQuestionAnswer);
+const gameProgression = () => playGame(gameTask, getQuestionAnswer);
 
 export default gameProgression;

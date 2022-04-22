@@ -1,7 +1,7 @@
 import playGame from '../index.js';
 import { getRandomInt } from '../randomGenerator.js';
 
-const gameQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
+const gameTask = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 // Checks whether integer is even or not
 // Note: -1 = true
@@ -17,6 +17,6 @@ export const getQuestionAnswer = () => {
   return [question, answer];
 };
 
-const gameEven = () => playGame(gameQuestion, getQuestionAnswer);
+const gameEven = () => playGame(gameTask, getQuestionAnswer);
 
 export default gameEven;
