@@ -3,7 +3,6 @@ import { getRandomInt } from '../randomGenerator.js';
 
 const gameTask = 'What is the result of the expression?';
 
-// Returns question (operand operator operand - all random) and answer for calculation
 export const getQuestionAnswer = () => {
   const [minNum, maxNum] = [1, 100];
   const num1 = getRandomInt(minNum, maxNum);
@@ -17,7 +16,6 @@ export const getQuestionAnswer = () => {
   const question = `${num1} ${selectedOperator} ${num2}`;
 
   let answer;
-  // Result of 2 operands - num1 & num2
   switch (selectedOperator) {
     case '+': answer = num1 + num2; break;
     case '-': answer = num1 - num2; break;

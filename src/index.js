@@ -1,7 +1,6 @@
 import readlineSync from 'readline-sync';
 
 const playGame = (gameTask, getQuestionCorrectAnswer) => {
-  // Greeting and username request
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
@@ -21,7 +20,6 @@ const playGame = (gameTask, getQuestionCorrectAnswer) => {
       return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${userName}!`);
     }
   }
-  // If answered correctly thrice.
   return console.log(`Congratulations, ${userName}!`);
 };
 

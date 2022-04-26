@@ -26,10 +26,6 @@ const getProgressions = (a, l, d) => {
 };
 
 export const getQuestionAnswer = () => {
-  // Generate:
-  // 1. AP collection length
-  // 2. Common difference between terms
-  // 3. The first term / initial value
   const [minProgressionLength, maxProgressionLength] = [5, 15];
   const progressionLength = getRandomInt(minProgressionLength, maxProgressionLength);
 
@@ -39,17 +35,13 @@ export const getQuestionAnswer = () => {
   const [minInitialNum, maxInitialNum] = [1, 100];
   const initialNum = getRandomInt(minInitialNum, maxInitialNum);
 
-  // Randomly select the index for which the number should be hidden
   const [minIndex, maxIndex] = [0, progressionLength - 1];
   const indexWithHiddenNum = getRandomInt(minIndex, maxIndex);
 
-  // Get AP with one number of 'indexWithHiddenNum' index to be hidden
   const [, progressionCollHiddenNum] = getProgressions(initialNum, progressionLength, commonDiff);
 
-  // Answer = number to be hidden
   const answer = progressionCollHiddenNum[indexWithHiddenNum].toString();
 
-  // Hide number and generate string with hidden number
   progressionCollHiddenNum[indexWithHiddenNum] = '..';
   const question = progressionCollHiddenNum.join(' ');
 

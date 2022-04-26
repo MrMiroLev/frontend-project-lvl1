@@ -3,14 +3,12 @@ import { getRandomInt } from '../randomGenerator.js';
 
 const gameTask = 'Find the greatest common divisor of given numbers.';
 
-// Returns the Greatest Common Divisor for 'a' and 'b' integers
-const gcd = (a, b) => {
-  const remainder = a % b;
-  if (remainder === 0) return b.toString();
-  return gcd(b, remainder);
+const gcd = (num1, num2) => {
+  const remainder = num1 % num2;
+  if (remainder === 0) return num2.toString();
+  return gcd(num2, remainder);
 };
 
-// Returns 2 random numbers as a question and answer for gcd
 export const getQuestionAnswer = () => {
   const [minNum, maxNum] = [1, 100];
 

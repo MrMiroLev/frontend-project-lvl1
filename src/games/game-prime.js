@@ -25,7 +25,6 @@ const isPrime = (num) => {
 
 export const getQuestionAnswer = () => {
   const [minNum, maxNum] = [1, 100];
-  // Question is a number
   const question = getRandomInt(minNum, maxNum);
   const answer = isPrime(question) ? 'yes' : 'no';
 
