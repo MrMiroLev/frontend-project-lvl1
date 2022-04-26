@@ -9,7 +9,7 @@ const playGame = (gameTask, getQuestionCorrectAnswer) => {
   console.log(gameTask);
 
   const totalRounds = 3;
-  for (let round = 1; round <= totalRounds; round += 1) {
+  for (let roundsDoneCount = 0; roundsDoneCount < totalRounds; roundsDoneCount += 1) {
     const [question, correctAnswer] = getQuestionCorrectAnswer();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
